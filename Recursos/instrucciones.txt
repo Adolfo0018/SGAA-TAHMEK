@@ -1,0 +1,36 @@
+Tienes que crear un virtual host si no, te va da error de broadcasting
+pega los archivos que te deje en las siguientes rutas
+
+C:\xampp\apache\conf\extra ====  httpd-vhosts.conf
+
+modifica el archivo llamado hosts que se encuentra en la ruta
+C:\Windows\System32\drivers\etc
+abriendo el archivo con el bloc de notas
+en modo administrador y pegando lo siguiente al final del archivo
+
+#host para laravel
+127.0.0.1       localhost
+127.0.0.1	sgaa.localhost
+
+al final de todo eso dale stop en el xampp y luego reinicia la pc
+
+despues de eso cuando entres al proyecto en el cmd debes ejecutar
+los comandos 
+composer update 
+npm run dev
+para instalar todas las dependencias y no te de ningun error 
+
+por ultimo se ejecuta php artisan websockets:serve para activar el 
+servidor y que comience a funcionar la aplicacion
+
+por el momento ya funciona el chat , solo que es necesario recargar la
+pagina para que te muestre los mensajes que ya te enviaron y a veces no
+carga los mensajes por cuestiones de la red pero volviendo a recargar
+ya los muestra, eso aun esta por corregirse
+
+tienes que decirle al maestro fernando que te ayude porque laravel Echo
+no esta funcionando y eso evita que el chat pueda ejecutarse en tiempo
+real de igual manera debes decirle que se utilizo aparte de laravel Echo
+se utilizo websockets como reemplazo de PUSHER, y que se creo un 
+evento llamado MessageSent en la carpeta public/js se encuentra un archivo llamado chat.js
+alla es donde se esta manejando la parte del javascript del chat y practicamente toda la funcionalidad
